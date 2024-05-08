@@ -1,7 +1,7 @@
 function TopSelling() {
   return (
     <div
-      id="newArrivals"
+      id="topSelling"
       className="flex flex-col space-y-9 p-10 mt-10 items-center"
     >
       {" "}

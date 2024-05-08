@@ -15,7 +15,7 @@ function Header() {
             <a href="#topSelling">Top Selling</a>
           </li>
           <li>
-            <a href="#producs">Products</a>
+            <a href="#products">Products</a>
           </li>
         </ul>
         <div>

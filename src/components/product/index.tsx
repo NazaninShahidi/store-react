@@ -1,6 +1,9 @@
 function ProductItem() {
   return (
-    <div className="bg-[#F0F0F0] rounded-[40px] p-10  mx-auto mt-3">
+    <div
+      id="products"
+      className="bg-[#F0F0F0] rounded-[40px] p-10  mx-auto mt-3"
+    >
       <h2 className="font-bold text-center text-5xl p-8 mb-5 uppercase">
         BROWSE BY dress STYLE
       </h2>
