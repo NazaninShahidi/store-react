@@ -6,3 +6,19 @@
 .hero{
    background-image: url(./assests/hero.png);
 }
+
+.swiper-slide{
+   padding: 1em;
+}
+
+.swiper-button-prev, .swiper-button-next{
+   position: relative !important;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next::after{
+   content:"" !important;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev::after{
+   content: "" !important;
+}
