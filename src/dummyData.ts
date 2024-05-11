@@ -120,11 +120,23 @@ const data: IProduct[] = [
 ];
 
 export const getNewProduct = () => {
-  const NewProductList = data.filter((product) => product.new);
-  return NewProductList;
+  const newProductList = data.filter((product) => product.new);
+  return newProductList;
 };
 
 export const getTopSellingProduct = () => {
-  const NewProductList = data.filter((product) => product.topSelling);
-  return NewProductList;
+  const newProductList = data.filter((product) => product.topSelling);
+  return newProductList;
+};
+
+export const getProductByCategory = (category: string) => {
+  const newProductList = data.filter(
+    (product) => product.category === category
+  );
+  return newProductList;
+};
+
+export const getProducById = (id: string) => {
+  const newProductList = data.find((product) => product.id === id);
+  return newProductList;
 };

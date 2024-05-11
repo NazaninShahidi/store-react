@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function ProductItem() {
   return (
     <div
@@ -9,7 +11,11 @@ function ProductItem() {
       </h2>
       <div className="p-5">
         <div className="flex flex-wrap space-x-4 mb-2 justify-center">
-          <a href="#" className="relative">
+          <Link
+            to="/products"
+            className="relative"
+            state={{ category: "casual" }}
+          >
             <img
               src={require("../../assests/products/casual.png")}
               alt=""
@@ -18,7 +24,7 @@ function ProductItem() {
             <span className="absolute top-6 left-9 font-bold text-[36px]">
               Casual
             </span>
-          </a>
+          </Link>
           <a href="#" className="relative ">
             <img
               src={require("../../assests/products/formal.png")}

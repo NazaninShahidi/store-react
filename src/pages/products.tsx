@@ -1,5 +1,35 @@
+import { useLocation } from "react-router-dom";
+import Filter from "../components/ui/Filter";
+import { useEffect, useState } from "react";
+import { IProduct, getProductByCategory } from "../dummyData";
+import Card from "../components/ui/Card";
+
 function ProductsPage() {
-  return <div>list</div>;
+  const [category, setCategory] = useState("");
+  const [productList, setProcutList] = useState<IProduct[]>([]);
+  const { state: routerState }: any = useLocation();
+
+  useEffect(() => {
+    setCategory(routerState?.category);
+  }, []);
+
+  useEffect(() => {
+    const newProducts = getProductByCategory(category);
+    setProcutList(newProducts);
+  }, [category]);
+
+  return (
+    <div className="max-w-screen-xl mx-auto p-3">
+      <div className="flex flex-row space-x-7">
+        <Filter />
+        <div className="grid gird-cols-2 md:grid-cols-3 md:gap-5">
+          {productList.map((product) => (
+            <Card item={product} key={product.id} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default ProductsPage;

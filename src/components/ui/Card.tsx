@@ -1,19 +1,24 @@
+import { Link } from "react-router-dom";
 import { IProduct } from "../../dummyData";
 
 const Card = ({ item }: { item: IProduct }) => {
   return (
     <div>
-      <a href="">
+      <Link to="/product" state={{ id: item.id }}>
         <img
           src={require(`../../assests/products/${item.image}`)}
           alt={item.title}
         />
-      </a>
+      </Link>
 
       <div className="flex flex-col space-y-2 mt-2">
-        <a href="#" className="font-bold text-xl">
+        <Link
+          to="/product"
+          state={{ id: item.id }}
+          className="font-bold text-xl"
+        >
           {item.title}
-        </a>
+        </Link>
         <div className="flex flex-row items-center p-0 gap-[13px]">
           {" "}
           <div className="flex space-x-2">
