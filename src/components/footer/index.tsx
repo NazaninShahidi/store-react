@@ -21,10 +21,10 @@ function Footer() {
         </div>
       </div>
       <footer className=" bg-[#F0F0F0] p-10">
-        <div className="flex flex-row space-x-5 items-start p-0 max-w-screen-xl mx-auto">
-          <div className="flex flex-col items-start p-0  w-[248px] space-y-3">
+        <div className="flex flex-row space-x-5 items-start p-0 max-w-screen-xl mx-auto ">
+          <div className="flex flex-col items-start p-0 mx-2 w-[248px] space-y-3">
             <div className="flex flex-col items-start space-y-3">
-              <a href="#">
+              <a href="/">
                 <img src={require("../../assests/logo.png")} alt="logo" />
               </a>
               <p className="text-[#00000099]">

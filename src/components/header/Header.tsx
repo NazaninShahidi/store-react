@@ -4,7 +4,7 @@ function Header() {
   return (
     <nav className="w-full h-auto  bg-white">
       <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between">
-        <a href="#">
+        <a href="/">
           <img src={require("../../assests/logo.png")} alt="logo" />
         </a>
         <ul className="flex flex-row space-x-7 font-normal text-[16px]">
