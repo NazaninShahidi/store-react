@@ -25,7 +25,7 @@ function Footer() {
           <div className="flex flex-col items-start p-0 mx-2 w-[248px] space-y-3">
             <div className="flex flex-col items-start space-y-3">
               <a href="/">
-                <img src={require("../../assests/logo.png")} alt="logo" />
+                <img src="assests/logo.png" alt="logo" />
               </a>
               <p className="text-[#00000099]">
                 We have clothes that suits your style and which you’re proud to

@@ -106,7 +106,7 @@ function Comments() {
                 <div className="flex flex-col items-start space-y-2">
                   <div className="flex items-center space-x-1">
                     <span className="font-bold text-[20px]">Sarah M.</span>
-                    <img src={require("../../assests/tick.png")} alt="" />
+                    <img src="assests/tick.png" alt="" />
                   </div>
                   <p className="text-[#00000099] font-normal text-[16px]">
                     "I'm blown away by the quality and style of the clothes I
@@ -185,7 +185,7 @@ function Comments() {
                 <div className="flex flex-col items-start space-y-2">
                   <div className="flex items-center space-x-1">
                     <span className="font-bold text-[20px]">Alex K.</span>
-                    <img src={require("../../assests/tick.png")} alt="" />
+                    <img src="assests/tick.png" alt="" />
                   </div>
                   <p className="text-[#00000099] font-normal text-[16px]">
                     "Finding clothes that align with my personal style used to
@@ -265,7 +265,7 @@ function Comments() {
                 <div className="flex flex-col items-start space-y-2">
                   <div className="flex items-center space-x-1">
                     <span className="font-bold text-[20px]">James L.</span>
-                    <img src={require("../../assests/tick.png")} alt="" />
+                    <img src="assests/tick.png" alt="" />
                   </div>
                   <p className="text-[#00000099] font-normal text-[16px]">
                     "As someone who's always on the lookout for unique fashion
@@ -344,7 +344,7 @@ function Comments() {
                 <div className="flex flex-col items-start space-y-2">
                   <div className="flex items-center space-x-1">
                     <span className="font-bold text-[20px]">Mooen</span>
-                    <img src={require("../../assests/tick.png")} alt="" />
+                    <img src="assests/tick.png" alt="" />
                   </div>
                   <p className="text-[#00000099] font-normal text-[16px]">
                     "As someone who's always on the lookout for unique fashion
@@ -423,7 +423,7 @@ function Comments() {
                 <div className="flex flex-col items-start space-y-2">
                   <div className="flex items-center space-x-1">
                     <span className="font-bold text-[20px]">Sarah M.</span>
-                    <img src={require("../../assests/tick.png")} alt="" />
+                    <img src="assests/tick.png" alt="" />
                   </div>
                   <p className="text-[#00000099] font-normal text-[16px]">
                     "I'm blown away by the quality and style of the clothes I
@@ -501,7 +501,7 @@ function Comments() {
                 <div className="flex flex-col items-start space-y-2">
                   <div className="flex items-center space-x-1">
                     <span className="font-bold text-[20px]">Sarah M.</span>
-                    <img src={require("../../assests/tick.png")} alt="" />
+                    <img src="assests/tick.png" alt="" />
                   </div>
                   <p className="text-[#00000099] font-normal text-[16px]">
                     "I'm blown away by the quality and style of the clothes I

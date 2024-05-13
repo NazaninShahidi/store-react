@@ -17,7 +17,7 @@ function ProductItem() {
             state={{ category: "casual" }}
           >
             <img
-              src={require("../../assests/products/casual.png")}
+              src="assests/products/casual.png"
               alt=""
               className="rounded-[20px] relative"
             />
@@ -25,38 +25,46 @@ function ProductItem() {
               Casual
             </span>
           </Link>
-          <a href="#" className="relative ">
+          <Link
+            to="/products"
+            className="relative"
+            state={{ category: "formal" }}
+          >
             <img
-              src={require("../../assests/products/formal.png")}
+              src="assests/products/formal.png"
               alt=""
               className="rounded-[20px] "
             />
             <span className="absolute top-6 left-9 font-bold text-[36px]">
               Formal
             </span>
-          </a>
+          </Link>
         </div>
         <div className="flex flex-wrap space-x-4 mt-5 justify-center">
-          <a href="#" className="relative  ">
+          <Link
+            to="/products"
+            className="relative"
+            state={{ category: "party" }}
+          >
             <img
-              src={require("../../assests/products/party.png")}
+              src="assests/products/party.png"
               alt=""
               className="rounded-[20px]"
             />
             <span className="absolute top-6 left-9 font-bold text-[36px]">
               Party
             </span>
-          </a>
-          <a href="#" className="relative ">
+          </Link>
+          <Link to="/products" className="relative" state={{ category: "gym" }}>
             <img
-              src={require("../../assests/products/gym.png")}
+              src="assests/products/gym.png"
               alt=""
               className="rounded-[20px] "
             />
             <span className="absolute top-6 left-9 font-bold text-[36px]">
               Gym
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

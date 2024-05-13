@@ -41,11 +41,11 @@ function Hero() {
       </div>
       <div className="bg-[#000000] w-full">
         <div className="flex justify-between mx-auto items-center max-w-screen-xl p-8">
-          <img src={require("../../assests/1.png")} alt="" />
-          <img src={require("../../assests/2.png")} alt="" />
-          <img src={require("../../assests/3.png")} alt="" />
-          <img src={require("../../assests/4.png")} alt="" />
-          <img src={require("../../assests/5.png")} alt="" />
+          <img src="assests/1.png" alt="" />
+          <img src="assests/2.png" alt="" />
+          <img src="assests/3.png" alt="" />
+          <img src="assests/4.png" alt="" />
+          <img src="assests/5.png" alt="" />
         </div>
       </div>
     </div>

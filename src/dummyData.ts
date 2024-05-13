@@ -9,7 +9,8 @@ export interface IProduct {
   category: string;
   new: boolean;
   topSelling: boolean;
-  image: string;
+  image: Array<string>;
+  description?: string;
 }
 
 const data: IProduct[] = [
@@ -24,7 +25,7 @@ const data: IProduct[] = [
     category: "casual",
     new: true,
     topSelling: false,
-    image: "T-shirt.png",
+    image: ["T-shirt.png"],
   },
   {
     id: "2",
@@ -37,7 +38,7 @@ const data: IProduct[] = [
     category: "casual",
     new: true,
     topSelling: false,
-    image: "srriped-t-shirt.png",
+    image: ["srriped-t-shirt.png"],
   },
   {
     id: "3",
@@ -50,7 +51,7 @@ const data: IProduct[] = [
     category: "casual",
     new: true,
     topSelling: false,
-    image: "skinny-fit-jeans.png",
+    image: ["skinny-fit-jeans.png"],
   },
   {
     id: "4",
@@ -63,7 +64,7 @@ const data: IProduct[] = [
     category: "casual",
     new: true,
     topSelling: false,
-    image: "checkered-shirt.png",
+    image: ["checkered-shirt.png"],
   },
   {
     id: "5",
@@ -76,7 +77,7 @@ const data: IProduct[] = [
     category: "casual",
     new: false,
     topSelling: true,
-    image: "vertical-striped-shirt.png",
+    image: ["vertical-striped-shirt.png"],
   },
   {
     id: "6",
@@ -89,7 +90,7 @@ const data: IProduct[] = [
     category: "casual",
     new: false,
     topSelling: true,
-    image: "graphic-t-shirt.png",
+    image: ["graphic-t-shirt.png"],
   },
   {
     id: "7",
@@ -102,7 +103,7 @@ const data: IProduct[] = [
     category: "casual",
     new: false,
     topSelling: true,
-    image: "shorts.png",
+    image: ["shorts.png"],
   },
   {
     id: "8",
@@ -115,7 +116,26 @@ const data: IProduct[] = [
     category: "casual",
     new: false,
     topSelling: true,
-    image: "skinny-jeans.png",
+    image: ["skinny-jeans.png"],
+  },
+  {
+    id: "9",
+    title: "One Life Graphic T-shirt",
+    price: "300",
+    discount: true,
+    discountPrice: "260",
+    discountPercent: 40,
+    star: 4.5,
+    category: "casual",
+    new: false,
+    topSelling: false,
+    image: [
+      "one-life-graphic-t-shirt.png",
+      "one-life-graphic-t-shirt-1.png",
+      "one-life-graphic-t-shirt-2.png",
+    ],
+    description:
+      "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
   },
 ];
 

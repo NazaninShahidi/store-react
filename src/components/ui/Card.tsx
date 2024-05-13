@@ -6,8 +6,9 @@ const Card = ({ item }: { item: IProduct }) => {
     <div>
       <Link to="/product" state={{ id: item.id }}>
         <img
-          src={require(`../../assests/products/${item.image}`)}
+          src={`assests/products/${item.image[0]}`}
           alt={item.title}
+          className="w-full h-2/3"
         />
       </Link>
 
