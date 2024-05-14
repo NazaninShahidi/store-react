@@ -12,14 +12,14 @@ const ImageDetails = ({ item }: { item: IProduct | undefined }) => {
 
   return (
     <div className="flex flex-col-reverse  md:flex-row md:space-x-4">
-      <div className="flex flex-row space-x-2 md:flex-col md:space-y-2 md:space-x-0  md:w-1/3">
+      <div className="flex flex-row space-x-2 md:flex-col md:space-y-2 md:space-x-0  ">
         {item?.image.map((im) => (
           <img
             src={`assests/products/${im}`}
             alt=""
-            className={`md:h-3/4 w-1/3 md:w-full rounded-[20px] ${
+            className={`rounded-[20px] ${
               choosenImg === im ? "border border-[#000]" : ""
-            }`}
+            } ${item.image.length === 1 ? "w-[152px] h-[168px]" : ""}`}
             onClick={() => setChoosenImg(im)}
           />
         ))}

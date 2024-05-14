@@ -1,6 +1,11 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { FiShoppingCart } from "react-icons/fi";
+import { FaRegUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 function Header() {
+  const product = useSelector((state: any) => state.product.value);
+
   return (
     <nav className="w-full h-auto  bg-white">
       <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between">
@@ -31,16 +36,18 @@ function Header() {
           />
         </div>
         <div className="flex flex-row justify-center items-center">
-          <img
-            className=" w-[24px] h-[24px]  m-2"
-            alt="Frame"
-            src="assests/shop.png"
-          />
-          <img
-            className=" w-[24px] h-[24px]  m-2"
-            alt="Frame"
-            src="assests/user.png"
-          />
+          <Link to="/" className=" m-2">
+            <FiShoppingCart className="w-[30px] h-[30px] relative" />
+            {product.length ? (
+              <span className="absolute rounded-full bg-red-600 text-white w-5 h-5 text-center top-9">
+                {product.length}
+              </span>
+            ) : null}
+          </Link>
+
+          <Link to="/" className=" m-2">
+            <FaRegUserCircle className="w-[30px] h-[30px] " />
+          </Link>
         </div>
       </div>
     </nav>

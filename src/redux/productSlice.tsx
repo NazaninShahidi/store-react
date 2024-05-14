@@ -14,11 +14,13 @@ export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    increment: (state) => {},
+    addToCart: (state, action) => {
+      state.value = action.payload;
+    },
     decrement: (state) => {},
     incrementByAmount: (state, action: PayloadAction<number>) => {},
   },
 });
 
-export const { increment, decrement, incrementByAmount } = productSlice.actions;
+export const { addToCart, decrement, incrementByAmount } = productSlice.actions;
 export default productSlice.reducer;

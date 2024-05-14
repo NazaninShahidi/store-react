@@ -2,12 +2,28 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IProduct, getProducById } from "../dummyData";
 import ImageDetails from "../components/ui/ImageDetails";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/productSlice";
 
 const ProductPage = () => {
   const [productId, setProductId] = useState("");
+  const [numberProduct, setNumberProduct] = useState<number>(1);
+  const [productList, setProductList] = useState<IProduct[]>([]);
   const [currentProduct, setCurrentProduct] = useState<IProduct>();
-
   const { state: routerState }: any = useLocation();
+  const dispatch = useDispatch();
+
+  const handleIncreaseNumberProduct = () => {
+    setNumberProduct(numberProduct + 1);
+  };
+
+  const handleDecreaseNumberProduct = () => {
+    if (numberProduct === 1) {
+      return;
+    }
+
+    setNumberProduct(numberProduct - 1);
+  };
 
   useEffect(() => {
     setProductId(routerState?.id);
@@ -17,6 +33,11 @@ const ProductPage = () => {
     const newProducts = getProducById(productId);
     setCurrentProduct(newProducts);
   }, [productId]);
+
+  useEffect(() => {
+    const newArr = [...Array(numberProduct).fill(currentProduct)];
+    setProductList(newArr);
+  }, [numberProduct]);
 
   return (
     <div className="max-w-screen-xl mx-auto">
@@ -149,15 +170,27 @@ const ProductPage = () => {
           <div className="border border-[#0000001a] px-2  w-full h-0"></div>
           <div className="flex flex-row  justify-between space-x-6 items-center">
             <div className=" w-1/3 flex justify-between items-center bg-[#F0F0F0] rounded-[62px] px-[20px] py-[16px]">
-              <button className="font-bold text-center" title="Azalt">
+              <button
+                className="font-bold text-center"
+                title="Azalt"
+                onClick={handleDecreaseNumberProduct}
+                disabled={numberProduct === 1}
+              >
                 -
               </button>
-              <div className="text-[16px] font-medium">0</div>
-              <button className="font-bold text-center" title="Arrtır">
+              <div className="text-[16px] font-medium">{numberProduct}</div>
+              <button
+                className="font-bold text-center"
+                title="Arrtır"
+                onClick={handleIncreaseNumberProduct}
+              >
                 +
               </button>
             </div>
-            <button className="w-full py-[16px] px-[54px] rounded-[62px] bg-black text-white hover:bg-[#F0F0F0] hover:text-[#00000099]">
+            <button
+              className="w-full py-[16px] px-[54px] rounded-[62px] bg-black text-white hover:bg-[#F0F0F0] hover:text-[#00000099] "
+              onClick={() => dispatch(addToCart(productList))}
+            >
               Add to Cart
             </button>
           </div>
