@@ -13,7 +13,7 @@ const ImageDetails = ({ item }: { item: IProduct | undefined }) => {
   return (
     <div className="flex flex-col-reverse  md:flex-row md:space-x-4">
       <div className="flex flex-row space-x-2 md:flex-col md:space-y-2 md:space-x-0  ">
-        {item?.image.map((im) => (
+        {item?.image.map((im, index) => (
           <img
             src={`assests/products/${im}`}
             alt=""
@@ -21,6 +21,7 @@ const ImageDetails = ({ item }: { item: IProduct | undefined }) => {
               choosenImg === im ? "border border-[#000]" : ""
             } ${item.image.length === 1 ? "w-[152px] h-[168px]" : ""}`}
             onClick={() => setChoosenImg(im)}
+            key={index}
           />
         ))}
       </div>
