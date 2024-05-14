@@ -4,7 +4,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 function Header() {
-  const product = useSelector((state: any) => state.product.value);
+  const products = useSelector((state: any) => state.product.value);
 
   return (
     <nav className="w-full h-auto  bg-white">
@@ -36,11 +36,11 @@ function Header() {
           />
         </div>
         <div className="flex flex-row justify-center items-center">
-          <Link to="/" className=" m-2">
+          <Link to="/cart" className=" m-2">
             <FiShoppingCart className="w-[30px] h-[30px] relative" />
-            {product.length ? (
+            {products.length ? (
               <span className="absolute rounded-full bg-red-600 text-white w-5 h-5 text-center top-9">
-                {product.length}
+                {products.length}
               </span>
             ) : null}
           </Link>
