@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { IProduct, getProducById } from "../dummyData";
 import ImageDetails from "../components/ui/ImageDetails";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/productSlice";
 
 const ProductPage = () => {
@@ -11,6 +11,7 @@ const ProductPage = () => {
   const [productList, setProductList] = useState<IProduct[]>([]);
   const [currentProduct, setCurrentProduct] = useState<IProduct>();
   const { state: routerState }: any = useLocation();
+  const products = useSelector((state: any) => state.product.value);
   const dispatch = useDispatch();
 
   const handleIncreaseNumberProduct = () => {
@@ -35,9 +36,14 @@ const ProductPage = () => {
   }, [productId]);
 
   useEffect(() => {
-    const newArr = [...Array(numberProduct).fill(currentProduct)];
+    let newArr;
+    if (products?.length) {
+      newArr = [...products, ...Array(numberProduct).fill(currentProduct)];
+    } else {
+      newArr = [...Array(numberProduct).fill(currentProduct)];
+    }
     setProductList(newArr);
-  }, [numberProduct]);
+  }, [numberProduct, currentProduct, products]);
 
   return (
     <div className="max-w-screen-xl mx-auto">

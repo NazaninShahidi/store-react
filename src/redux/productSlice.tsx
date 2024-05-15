@@ -17,10 +17,14 @@ export const productSlice = createSlice({
     addToCart: (state, action) => {
       state.value = action.payload;
     },
-    decrement: (state) => {},
-    incrementByAmount: (state, action: PayloadAction<number>) => {},
+    deleteFromCart: (state, action) => {
+      const newArr = state.value.filter(
+        (product) => product.id !== action.payload
+      );
+      state.value = newArr;
+    },
   },
 });
 
-export const { addToCart, decrement, incrementByAmount } = productSlice.actions;
+export const { addToCart, deleteFromCart } = productSlice.actions;
 export default productSlice.reducer;

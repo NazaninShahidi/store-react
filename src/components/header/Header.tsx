@@ -9,9 +9,9 @@ function Header() {
   return (
     <nav className="w-full h-auto  bg-white">
       <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between">
-        <a href="/">
+        <Link to="/">
           <img src="assests/logo.png" alt="logo" />
-        </a>
+        </Link>
         <ul className="flex flex-row space-x-7 font-normal text-[16px]">
           <li>
             <a href="#newArrivals">New Arrivals</a>
