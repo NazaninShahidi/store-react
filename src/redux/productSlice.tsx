@@ -23,8 +23,33 @@ export const productSlice = createSlice({
       );
       state.value = newArr;
     },
+    increaseProductCount: (state, action) => {
+      const product = state.value.find(
+        (product) => product.id === action.payload
+      );
+      if (product) {
+        const newArr = [...state.value, ...Array(1).fill(product)];
+        state.value = newArr;
+      }
+    },
+    decreaseProductCount: (state, action) => {
+      const index = state.value.findIndex(
+        (product) => product.id === action.payload
+      );
+      if (state.value.length === 1) {
+        return;
+      }
+      if (index !== -1) {
+        state.value.splice(index, 1);
+      }
+    },
   },
 });
 
-export const { addToCart, deleteFromCart } = productSlice.actions;
+export const {
+  addToCart,
+  deleteFromCart,
+  decreaseProductCount,
+  increaseProductCount,
+} = productSlice.actions;
 export default productSlice.reducer;
