@@ -3,9 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.hero{
-   background-image: url(./../public/assests/hero.png);
-}
+
 
 .swiper-slide{
    padding: 1em;
@@ -21,4 +19,11 @@
 
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev::after{
    content: "" !important;
+}
+
+
+@media (min-width: 768px) {
+   .hero{
+      background-image: url(./../public/assests/hero.png);
+   }
 }

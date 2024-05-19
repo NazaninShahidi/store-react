@@ -15,8 +15,10 @@ function TopSelling() {
       className="flex flex-col space-y-9 p-10 mt-10 items-center"
     >
       {" "}
-      <h2 className="font-bold text-center text-5xl  uppercase">top selling</h2>
-      <div className="flex items-center justify-center space-x-3">
+      <h2 className="font-bold text-center text-3xl md:text-5xl  uppercase">
+        top selling
+      </h2>
+      <div className="grid grid-cols-2 gap-2 md:flex  md:flex-row items-center justify-center space-x-3">
         {productList?.map((product) => (
           <Card key={product.id} item={product} />
         ))}

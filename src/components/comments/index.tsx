@@ -10,9 +10,9 @@ import { Navigation } from "swiper/modules";
 
 function Comments() {
   return (
-    <div className=" my-8">
+    <div className="mx-3 my-8 md:mx-0">
       <div className="flex justify-between items-center flex-row ">
-        <h2 className="font-bold text-start text-5xl py-8 mb-5 uppercase">
+        <h2 className="font-bold text-start text-3xl md:text-5xl py-8 mb-5 uppercase">
           OUR HAPPY CUSTOMERS
         </h2>
         <div className="flex space-x-2">
@@ -27,16 +27,16 @@ function Comments() {
       </div>
 
       <Swiper
-        slidesPerView={3}
         spaceBetween={30}
-        // navigation={{
-        //   nextEl: ".image-swiper-button-next",
-        //   prevEl: ".image-swiper-button-prev",
-        //   disabledClass: "swiper-button-disabled",
-        // }}
         modules={[Navigation]}
-        pagination={{
-          clickable: true,
+        pagination={{ clickable: true }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 3,
+          },
         }}
         className="mySwiper"
       >
