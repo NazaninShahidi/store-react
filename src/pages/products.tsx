@@ -26,7 +26,7 @@ function ProductsPage() {
           <div className="p-2 my-1">
             <p className="font-bold text-[32px] capitalize">{category}</p>
           </div>
-          <div className="grid gird-cols-2 md:grid-cols-3 md:gap-5">
+          <div className="grid grid-cols-2  gap-5 md:grid-cols-3">
             {productList.map((product) => (
               <Card item={product} key={product.id} />
             ))}

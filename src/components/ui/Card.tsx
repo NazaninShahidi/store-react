@@ -12,11 +12,11 @@ const Card = ({ item }: { item: IProduct }) => {
         />
       </Link>
 
-      <div className="flex flex-col space-y-2 mt-2">
+      <div className="flex flex-col space-y-1 md:space-y-2 mt-2">
         <Link
           to="/product"
           state={{ id: item.id }}
-          className="font-bold text-xl"
+          className="font-bold text-[1em] md:text-xl"
         >
           {item.title}
         </Link>

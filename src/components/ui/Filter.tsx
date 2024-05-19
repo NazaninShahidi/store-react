@@ -3,7 +3,7 @@ import { CiFilter } from "react-icons/ci";
 
 function Filter() {
   return (
-    <div className="w-[295px] flex flex-col items-start px-5 py-6 rounded-[20px] border border-[#0000001a]">
+    <div className=" md:w-[295px] hidden md:flex md:flex-col items-start px-5 py-6 rounded-[20px] border border-[#0000001a]">
       <div className="flex flex-row justify-between items-center w-full">
         <span className="font-bold text-[20px]">filter</span>
         <CiFilter />
