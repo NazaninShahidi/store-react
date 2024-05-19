@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="">
       <div className="max-w-screen-xl mx-2 md:mx-auto my-6  bg-black rounded-[20px] px-[36px] py-[64px]  flex flex-col md:flex-row  justify-between items-center ">
-        <p className="font-bold px-2 text-[40px] text-white text-center mb-5 md:mb-0">
+        <p className="font-bold px-2 text-[40px] text-white text-center mb-5 md:mb-0 md:text-start">
           STAY UPTO DATE ABOUT OUR LATEST OFFERS
         </p>
         <div className="flex flex-col items-start p-0 gap-[14px] w-[349px] ">
