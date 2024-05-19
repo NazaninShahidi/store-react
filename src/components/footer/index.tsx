@@ -5,8 +5,8 @@ import { IoLogoInstagram } from "react-icons/io5";
 function Footer() {
   return (
     <div className="">
-      <div className="max-w-screen-xl mx-auto my-6  bg-black rounded-[20px] px-[36px] py-[64px]  flex flex-col md:flex-row  justify-between items-center ">
-        <p className="font-bold px-2 text-[40px] text-white">
+      <div className="max-w-screen-xl mx-2 md:mx-auto my-6  bg-black rounded-[20px] px-[36px] py-[64px]  flex flex-col md:flex-row  justify-between items-center ">
+        <p className="font-bold px-2 text-[40px] text-white text-center mb-5 md:mb-0">
           STAY UPTO DATE ABOUT OUR LATEST OFFERS
         </p>
         <div className="flex flex-col items-start p-0 gap-[14px] w-[349px] ">
@@ -21,8 +21,8 @@ function Footer() {
         </div>
       </div>
       <footer className=" bg-[#F0F0F0] p-10">
-        <div className="flex flex-row space-x-5 items-start p-0 max-w-screen-xl mx-auto ">
-          <div className="flex flex-col items-start p-0 mx-2 w-[248px] space-y-3">
+        <div className="flex flex-col md:flex-row md:space-x-5 items-start p-0 max-w-screen-xl mx-auto ">
+          <div className="flex flex-col items-start my-6 p-0 md:mx-2 md:my-0 md:w-[248px] space-y-3">
             <div className="flex flex-col items-start space-y-3">
               <a href="/">
                 <img src="assests/logo.png" alt="logo" />
@@ -44,7 +44,7 @@ function Footer() {
               </a>
             </div>
           </div>
-          <div className="flex flex-row space-x-40">
+          <div className="md:flex grid grid-cols-2  gap-5 md:flex-row md:space-x-40">
             <div className="flex flex-col space-y-3">
               <span className="uppercase font-medium text-[16px] tracking-wider">
                 Company
