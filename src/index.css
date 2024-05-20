@@ -21,6 +21,14 @@
    content: "" !important;
 }
 
+.swiper-button-next, .swiper-rtl .swiper-button-prev{
+   margin-left: 2em !important;
+}
+
+
+.swiper-button-prev svg, .swiper-button-next svg{
+   color: black !important;
+}
 
 @media (min-width: 768px) {
    .hero{

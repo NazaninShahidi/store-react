@@ -1,12 +1,54 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
+import CommentDetail from "../ui/CommentDetail";
+
+const comments = [
+  {
+    name: "Sarah M.",
+    commentText:
+      " I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”",
+  },
+  {
+    name: "Alex K.",
+    commentText:
+      " Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to avariety of tastes and occasions.”",
+  },
+  {
+    name: "Mooen",
+    commentText:
+      " As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.”",
+  },
+  {
+    name: "Sarah M.",
+    commentText:
+      " I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”",
+  },
+  {
+    name: "Sarah M.",
+    commentText:
+      " I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”",
+  },
+  {
+    name: "Sarah M.",
+    commentText:
+      " I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”",
+  },
+  {
+    name: "Sarah M.",
+    commentText:
+      " I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”",
+  },
+  {
+    name: "Sarah M.",
+    commentText:
+      " I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.”",
+  },
+];
 
 function Comments() {
   return (
@@ -28,8 +70,17 @@ function Comments() {
 
       <Swiper
         spaceBetween={30}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
+        autoplay={{
+          delay: 3000, // تغییر اسلایدها هر 3 ثانیه
+          disableOnInteraction: false,
+        }}
+        loop={true}
         pagination={{ clickable: true }}
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -40,479 +91,11 @@ function Comments() {
         }}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="flex flex-row flex-wrap items-start rounded-[20px] border border-[#0000001a]  p-4 h-[240px]">
-            <div className="flex flex-row justify-between items-start p-2">
-              <div className="flex flex-col items-start space-y-3">
-                {" "}
-                <div className="flex space-x-2">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col items-start space-y-2">
-                  <div className="flex items-center space-x-1">
-                    <span className="font-bold text-[20px]">Sarah M.</span>
-                    <img src="assests/tick.png" alt="" />
-                  </div>
-                  <p className="text-[#00000099] font-normal text-[16px]">
-                    "I'm blown away by the quality and style of the clothes I
-                    received from Shop.co. From casual wear to elegant dresses,
-                    every piece I've bought has exceeded my expectations.”
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="flex flex-row flex-wrap items-start rounded-[20px] border border-[#0000001a]  p-4 h-[240px]">
-            <div className="flex flex-row justify-between items-start p-2">
-              <div className="flex flex-col items-start space-y-3">
-                {" "}
-                <div className="flex space-x-2">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col items-start space-y-2">
-                  <div className="flex items-center space-x-1">
-                    <span className="font-bold text-[20px]">Alex K.</span>
-                    <img src="assests/tick.png" alt="" />
-                  </div>
-                  <p className="text-[#00000099] font-normal text-[16px]">
-                    "Finding clothes that align with my personal style used to
-                    be a challenge until I discovered Shop.co. The range of
-                    options they offer is truly remarkable, catering to a
-                    variety of tastes and occasions.”
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          {" "}
-          <div className="flex flex-row flex-wrap items-start rounded-[20px] border border-[#0000001a]  p-4 h-[240px]">
-            <div className="flex flex-row justify-between items-start p-2">
-              <div className="flex flex-col items-start space-y-3">
-                {" "}
-                <div className="flex space-x-2">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col items-start space-y-2">
-                  <div className="flex items-center space-x-1">
-                    <span className="font-bold text-[20px]">James L.</span>
-                    <img src="assests/tick.png" alt="" />
-                  </div>
-                  <p className="text-[#00000099] font-normal text-[16px]">
-                    "As someone who's always on the lookout for unique fashion
-                    pieces, I'm thrilled to have stumbled upon Shop.co. The
-                    selection of clothes is not only diverse but also on-point
-                    with the latest trends.”
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-row flex-wrap items-start rounded-[20px] border border-[#0000001a]  p-4 h-[240px]">
-            <div className="flex flex-row justify-between items-start p-2">
-              <div className="flex flex-col items-start space-y-3">
-                {" "}
-                <div className="flex space-x-2">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col items-start space-y-2">
-                  <div className="flex items-center space-x-1">
-                    <span className="font-bold text-[20px]">Mooen</span>
-                    <img src="assests/tick.png" alt="" />
-                  </div>
-                  <p className="text-[#00000099] font-normal text-[16px]">
-                    "As someone who's always on the lookout for unique fashion
-                    pieces, I'm thrilled to have stumbled upon Shop.co. The
-                    selection of clothes is not only diverse but also on-point
-                    with the latest trends.”
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-row flex-wrap items-start rounded-[20px] border border-[#0000001a]  p-4 h-[240px]">
-            <div className="flex flex-row justify-between items-start p-2">
-              <div className="flex flex-col items-start space-y-3">
-                {" "}
-                <div className="flex space-x-2">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col items-start space-y-2">
-                  <div className="flex items-center space-x-1">
-                    <span className="font-bold text-[20px]">Sarah M.</span>
-                    <img src="assests/tick.png" alt="" />
-                  </div>
-                  <p className="text-[#00000099] font-normal text-[16px]">
-                    "I'm blown away by the quality and style of the clothes I
-                    received from Shop.co. From casual wear to elegant dresses,
-                    every piece I've bought has exceeded my expectations.”
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-row flex-wrap items-start rounded-[20px] border border-[#0000001a]  p-4 h-[240px]">
-            <div className="flex flex-row justify-between items-start p-2">
-              <div className="flex flex-col items-start space-y-3">
-                {" "}
-                <div className="flex space-x-2">
-                  {" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-                      fill="#F9940A"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col items-start space-y-2">
-                  <div className="flex items-center space-x-1">
-                    <span className="font-bold text-[20px]">Sarah M.</span>
-                    <img src="assests/tick.png" alt="" />
-                  </div>
-                  <p className="text-[#00000099] font-normal text-[16px]">
-                    "I'm blown away by the quality and style of the clothes I
-                    received from Shop.co. From casual wear to elegant dresses,
-                    every piece I've bought has exceeded my expectations.”
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+        {comments.map((comment) => (
+          <SwiperSlide>
+            <CommentDetail comment={comment} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
