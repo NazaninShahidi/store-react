@@ -16,7 +16,7 @@ const CartPage = () => {
   });
 
   useEffect(() => {
-    if (!products || !products.length) return;
+    // if (!products || !products.length) return;
     const uniqueProductIds = new Set();
     const uniqueProducts = products.filter((product: IProduct) => {
       if (!uniqueProductIds.has(product.id)) {
@@ -33,7 +33,7 @@ const CartPage = () => {
     <div className="max-w-screen-xl mx-auto">
       <h5 className="font-bold text-[40px] my-5 p-3 md:p-0">Your cart</h5>
       <div className="flex flex-col md:flex-row space-y-3  mx-3 md:space-x-5 md:space-y-0  md:mx-0">
-        {productList ? (
+        {productList?.length ? (
           <>
             <DetailCart
               productList={productList}

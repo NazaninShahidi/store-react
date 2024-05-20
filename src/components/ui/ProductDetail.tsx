@@ -158,7 +158,7 @@ function ProductDetail({
       </div>
       <div className="border border-[#0000001a] px-2  w-full h-0"></div>
       <div className="flex  flex-row  justify-between space-x-6 items-center">
-        <div className=" w-1/3 flex justify-between items-center bg-[#F0F0F0] rounded-[62px] px-[20px] py-[16px]">
+        <div className=" w-1/2 flex justify-between items-center bg-[#F0F0F0] rounded-[62px] px-[20px] py-[16px]">
           <button
             className="font-bold text-center"
             title="Azalt"
