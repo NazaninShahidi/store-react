@@ -3,6 +3,7 @@ import Filter from "../components/ui/Filter";
 import { useEffect, useState } from "react";
 import { IProduct, getProductByCategory } from "../dummyData";
 import Card from "../components/ui/Card";
+import Breadcrumbs from "../components/ui/Breadcrumbs";
 
 function ProductsPage() {
   const [category, setCategory] = useState("");
@@ -10,8 +11,11 @@ function ProductsPage() {
   const { state: routerState }: any = useLocation();
 
   useEffect(() => {
-    setCategory(routerState?.category);
-  }, []);
+    if (routerState) {
+      return setCategory(routerState?.category);
+    }
+    setCategory("All");
+  }, [routerState]);
 
   useEffect(() => {
     const newProducts = getProductByCategory(category);
@@ -20,6 +24,7 @@ function ProductsPage() {
 
   return (
     <div className="max-w-screen-xl mx-auto p-3">
+      <Breadcrumbs />
       <div className="flex flex-row space-x-7">
         <Filter />
         <div className="flex flex-col">

@@ -4,7 +4,7 @@ import { IProduct } from "../../dummyData";
 const Card = ({ item }: { item: IProduct }) => {
   return (
     <div>
-      <Link to="/product" state={{ id: item.id }}>
+      <Link to={`/products/${item.id}`}>
         <img
           src={`assests/products/${item.image[0]}`}
           alt={item.title}
@@ -14,8 +14,7 @@ const Card = ({ item }: { item: IProduct }) => {
 
       <div className="flex flex-col space-y-1 md:space-y-2 mt-2">
         <Link
-          to="/product"
-          state={{ id: item.id }}
+          to={`/products/${item.id}`}
           className="font-bold text-[1em] md:text-xl"
         >
           {item.title}

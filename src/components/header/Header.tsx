@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <nav className="w-full h-auto  bg-white">
-      <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between">
+      <div className="max-w-screen-xl mx-auto h-20 flex items-center justify-between border-b border-b-[#0000001a]">
         <div className="flex space-x-2">
           {" "}
           <button

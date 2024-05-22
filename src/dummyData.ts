@@ -150,6 +150,9 @@ export const getTopSellingProduct = () => {
 };
 
 export const getProductByCategory = (category: string) => {
+  if (category === "All") {
+    return data;
+  }
   const newProductList = data.filter(
     (product) => product.category === category
   );

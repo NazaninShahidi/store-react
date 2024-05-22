@@ -1,4 +1,3 @@
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 import "swiper/css";
@@ -72,7 +71,7 @@ function Comments() {
         spaceBetween={30}
         modules={[Navigation, Autoplay]}
         autoplay={{
-          delay: 3000, // تغییر اسلایدها هر 3 ثانیه
+          delay: 3000,
           disableOnInteraction: false,
         }}
         loop={true}
@@ -91,8 +90,8 @@ function Comments() {
         }}
         className="mySwiper"
       >
-        {comments.map((comment) => (
-          <SwiperSlide>
+        {comments.map((comment, index) => (
+          <SwiperSlide key={index}>
             <CommentDetail comment={comment} />
           </SwiperSlide>
         ))}
