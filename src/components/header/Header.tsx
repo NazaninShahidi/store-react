@@ -22,7 +22,7 @@ function Header() {
             <GiHamburgerMenu />
           </button>
           <Link to="/">
-            <img src="assests/logo.png" alt="logo" />
+            <img src="/assests/logo.png" alt="logo" />
           </Link>
         </div>
 
@@ -46,7 +46,7 @@ function Header() {
           <img
             className="hidden block md:w-[24px] md:h-[24px] absolute top-5 m-2"
             alt="Frame"
-            src="assests/search.png"
+            src="/assests/search.png"
           />
         </div>
         <div className="flex flex-row justify-center items-center">

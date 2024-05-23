@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -37,12 +37,12 @@ function Breadcrumbs() {
           const to = `/${pathNames.slice(0, index + 1).join("/")}`;
 
           return (
-            <>
-              <li key={to}>
+            <Fragment key={to}>
+              <li>
                 <Link to={to}>{getBreadcrumbName(value)}</Link>
               </li>
               {index !== pathNames.length - 1 && <IoIosArrowForward />}
-            </>
+            </Fragment>
           );
         })}
       </ul>
