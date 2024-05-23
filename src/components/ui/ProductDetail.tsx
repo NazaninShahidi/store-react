@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IProduct } from "../../dummyData";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/productSlice";
+import StarRating from "./StarRating";
 
 function ProductDetail({
   currentProduct,
@@ -42,64 +43,7 @@ function ProductDetail({
 
       <div className="flex flex-row  p-0 gap-[13px]">
         {" "}
-        <div className="flex space-x-2">
-          {" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-              fill="#F9940A"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-              fill="#F9940A"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-              fill="#F9940A"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-              fill="#F9940A"
-            />
-          </svg>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-              fill="#F9940A"
-            />
-          </svg>
-        </div>
+        <StarRating rating={currentProduct?.star ?? 0} />
         <span className="font-normal text-[14px]"></span>
         {`${currentProduct?.star}/5`}
       </div>
