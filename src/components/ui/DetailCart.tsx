@@ -34,15 +34,9 @@ function DetailCart({
               className="w-[124px] h-[124px]"
             />
             <div className="flex justify-between space-x-5 w-full">
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col space-y-3 justify-center">
                 <div className="flex flex-col space-y-1">
                   <p className="font-bold text-[20px]">{product.title}</p>
-                  <p className="font-normal text-[14px]">
-                    Size :<span className="text-[00000099]"></span>
-                  </p>
-                  <p className="font-normal text-[14px]">
-                    Color :<span className="text-[00000099]"> </span>
-                  </p>
                 </div>
                 <p className="font-bold text-[24px]">
                   ${product.discountPrice ?? product.price}

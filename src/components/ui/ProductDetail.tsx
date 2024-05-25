@@ -36,7 +36,7 @@ function ProductDetail({
     setProductList(newArr);
   }, [numberProduct, currentProduct, products]);
   return (
-    <div className="flex flex-col space-y-5">
+    <div className="flex flex-col justify-center space-y-8 w-1/2">
       <h5 className="font-bold text-3xl md:text-[40px] leading-[48px] uppercase">
         {currentProduct?.title}
       </h5>
@@ -70,38 +70,8 @@ function ProductDetail({
       <p className="text-[#00000099] font-normal text-[16px]">
         {currentProduct?.description}
       </p>
-      <div className="border border-[#0000001a] px-2  w-full h-0"></div>
 
-      <div className="flex flex-col space-y-2">
-        <p className="text-[#00000099] font-normal text-[16px]">
-          Select Colors
-        </p>
-        <div className="flex items-center space-x-2">
-          <button className="rounded-full w-[37px] h-[37px] bg-[#4F4631]"></button>
-          <button className="rounded-full w-[37px] h-[37px] bg-[#31344F]"></button>
-          <button className="rounded-full w-[37px] h-[37px] bg-[#314F4A]"></button>
-        </div>
-      </div>
-      <div className="border border-[#0000001a] px-2  w-full h-0"></div>
-      <div className="flex flex-wrap flex-col space-y-2">
-        <p className="text-[#00000099] font-normal text-[16px]">Choose Size</p>
-        <div className="flex flex-wrap items-center space-x-2">
-          <button className="rounded-[46px] py-[12px] px-[24px] bg-[#F0F0F0] text-[#00000099] font-normal text-[16px]  hover:bg-black hover:text-white">
-            Small
-          </button>
-          <button className="rounded-[46px] py-[12px] px-[24px] bg-[#F0F0F0] text-[#00000099] font-normal text-[16px]  hover:bg-black hover:text-white">
-            Medium
-          </button>
-          <button className="rounded-[46px] py-[12px] px-[24px] bg-[#F0F0F0] text-[#00000099] font-normal text-[16px]  hover:bg-black hover:text-white">
-            Large
-          </button>
-          <button className="rounded-[46px] py-[12px] px-[24px] bg-[#F0F0F0] text-[#00000099] font-normal text-[16px] hover:bg-black hover:text-white">
-            X-Large
-          </button>
-        </div>
-      </div>
-      <div className="border border-[#0000001a] px-2  w-full h-0"></div>
-      <div className="flex  flex-row  justify-between space-x-6 items-center">
+      <div className="flex  flex-row  justify-between space-x-6 items-center ">
         <div className=" w-1/2 flex justify-between items-center bg-[#F0F0F0] rounded-[62px] px-[20px] py-[16px]">
           <button
             className="font-bold text-center"
