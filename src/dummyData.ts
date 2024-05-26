@@ -26,6 +26,8 @@ const data: IProduct[] = [
     new: true,
     topSelling: false,
     image: ["T-shirt.png"],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?",
   },
   {
     id: "2",
@@ -39,6 +41,8 @@ const data: IProduct[] = [
     new: true,
     topSelling: false,
     image: ["srriped-t-shirt.png"],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?",
   },
   {
     id: "3",
@@ -52,6 +56,8 @@ const data: IProduct[] = [
     new: true,
     topSelling: false,
     image: ["skinny-fit-jeans.png"],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?",
   },
   {
     id: "4",
@@ -65,6 +71,8 @@ const data: IProduct[] = [
     new: true,
     topSelling: false,
     image: ["checkered-shirt.png"],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?",
   },
   {
     id: "5",
@@ -78,6 +86,8 @@ const data: IProduct[] = [
     new: false,
     topSelling: true,
     image: ["vertical-striped-shirt.png"],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?",
   },
   {
     id: "6",
@@ -91,6 +101,8 @@ const data: IProduct[] = [
     new: false,
     topSelling: true,
     image: ["graphic-t-shirt.png"],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?",
   },
   {
     id: "7",
@@ -104,6 +116,8 @@ const data: IProduct[] = [
     new: false,
     topSelling: true,
     image: ["shorts.png"],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?",
   },
   {
     id: "8",
@@ -117,6 +131,8 @@ const data: IProduct[] = [
     new: false,
     topSelling: true,
     image: ["skinny-jeans.png"],
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, et?",
   },
   {
     id: "9",
@@ -161,5 +177,28 @@ export const getProductByCategory = (category: string) => {
 
 export const getProducById = (id: string) => {
   const newProductList = data.find((product) => product.id === id);
+  return newProductList;
+};
+
+export const getProductByFilters = (filter: {
+  category?: string;
+  rangePrice?: { min?: number; max?: number };
+}) => {
+  let newProductList;
+
+  if (filter.category) {
+    newProductList = data.filter(
+      (product) => product.category === filter.category
+    );
+  } else if (filter.rangePrice) {
+    const minPrice = filter.rangePrice.min ?? Number.NEGATIVE_INFINITY;
+    const maxPrice = filter.rangePrice.max ?? Number.POSITIVE_INFINITY;
+    newProductList = data.filter(
+      (product) => +product.price >= minPrice && +product.price <= maxPrice
+    );
+  } else {
+    newProductList = data;
+  }
+
   return newProductList;
 };

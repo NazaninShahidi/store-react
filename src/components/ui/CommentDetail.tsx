@@ -1,11 +1,11 @@
 import React from "react";
 import StarRating from "./StarRating";
 
-function CommentDetail({
-  comment,
-}: {
+type props = {
   comment: { name: string; commentText: string; star: number };
-}) {
+};
+
+function CommentDetail({ comment }: props) {
   return (
     <div className="flex flex-row flex-wrap items-start rounded-[20px] border border-[#0000001a]  p-4 h-[240px]">
       <div className="flex flex-row justify-between items-start p-2">
